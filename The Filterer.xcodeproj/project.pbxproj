@@ -20,6 +20,7 @@
 		11C456E120729323006756DB /* SettingBoolView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 11C456E020729323006756DB /* SettingBoolView.xib */; };
 		11C456E320729331006756DB /* SettingIntegerView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 11C456E220729331006756DB /* SettingIntegerView.xib */; };
 		11C456E520729360006756DB /* SettingDoubleView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 11C456E420729360006756DB /* SettingDoubleView.xib */; };
+		11C456E720740562006756DB /* AppleGaussianBlurFilter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11C456E620740562006756DB /* AppleGaussianBlurFilter.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -39,6 +40,7 @@
 		11C456E020729323006756DB /* SettingBoolView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SettingBoolView.xib; sourceTree = "<group>"; };
 		11C456E220729331006756DB /* SettingIntegerView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SettingIntegerView.xib; sourceTree = "<group>"; };
 		11C456E420729360006756DB /* SettingDoubleView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SettingDoubleView.xib; sourceTree = "<group>"; };
+		11C456E620740562006756DB /* AppleGaussianBlurFilter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppleGaussianBlurFilter.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -86,6 +88,7 @@
 			children = (
 				11C456D120714921006756DB /* Filter.swift */,
 				11C456D320725545006756DB /* GaussianBlurFilter.swift */,
+				11C456E620740562006756DB /* AppleGaussianBlurFilter.swift */,
 				11C456D52072555A006756DB /* GaussianBlurParallelFilter.swift */,
 			);
 			path = Model;
@@ -105,6 +108,9 @@
 			isa = PBXGroup;
 			children = (
 				11C456C0207127DE006756DB /* Main.storyboard */,
+				11C456E020729323006756DB /* SettingBoolView.xib */,
+				11C456E220729331006756DB /* SettingIntegerView.xib */,
+				11C456E420729360006756DB /* SettingDoubleView.xib */,
 			);
 			path = UI;
 			sourceTree = "<group>";
@@ -121,11 +127,8 @@
 			isa = PBXGroup;
 			children = (
 				11C456D8207292D0006756DB /* SettingBoolView.swift */,
-				11C456E020729323006756DB /* SettingBoolView.xib */,
 				11C456DA207292ED006756DB /* SettingIntegerView.swift */,
-				11C456E220729331006756DB /* SettingIntegerView.xib */,
 				11C456DE2072930F006756DB /* SettingDoubleView.swift */,
-				11C456E420729360006756DB /* SettingDoubleView.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -206,6 +209,7 @@
 			files = (
 				11C456DB207292ED006756DB /* SettingIntegerView.swift in Sources */,
 				11C456BD207127DE006756DB /* ViewController.swift in Sources */,
+				11C456E720740562006756DB /* AppleGaussianBlurFilter.swift in Sources */,
 				11C456D420725545006756DB /* GaussianBlurFilter.swift in Sources */,
 				11C456D220714921006756DB /* Filter.swift in Sources */,
 				11C456D9207292D0006756DB /* SettingBoolView.swift in Sources */,

@@ -28,7 +28,7 @@
                     </textFieldCell>
                 </textField>
                 <box verticalHuggingPriority="750" boxType="separator" translatesAutoresizingMaskIntoConstraints="NO" id="uDd-p0-nkL">
-                    <rect key="frame" x="3" y="-2" width="189" height="5"/>
+                    <rect key="frame" x="12" y="-2" width="178" height="5"/>
                 </box>
                 <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="keY-Qz-Gep">
                     <rect key="frame" x="155" y="11" width="10" height="17"/>
@@ -42,14 +42,14 @@
             <constraints>
                 <constraint firstItem="Cm9-15-Ihk" firstAttribute="centerY" secondItem="c22-O7-iKe" secondAttribute="centerY" id="4ey-6N-0Oh"/>
                 <constraint firstItem="keY-Qz-Gep" firstAttribute="leading" secondItem="XMn-Wg-S40" secondAttribute="trailing" constant="8" id="DDo-Ot-abm"/>
-                <constraint firstAttribute="trailing" secondItem="uDd-p0-nkL" secondAttribute="trailing" constant="8" id="IPq-e3-jmB"/>
+                <constraint firstAttribute="trailing" secondItem="uDd-p0-nkL" secondAttribute="trailing" constant="10" id="IPq-e3-jmB"/>
                 <constraint firstItem="keY-Qz-Gep" firstAttribute="centerY" secondItem="c22-O7-iKe" secondAttribute="centerY" id="VYr-Ht-EcU"/>
                 <constraint firstItem="XMn-Wg-S40" firstAttribute="leading" secondItem="c22-O7-iKe" secondAttribute="leading" constant="20" id="bbI-97-TNQ"/>
                 <constraint firstItem="Cm9-15-Ihk" firstAttribute="top" secondItem="c22-O7-iKe" secondAttribute="top" constant="8" id="dMa-tZ-BXd"/>
                 <constraint firstAttribute="bottom" secondItem="uDd-p0-nkL" secondAttribute="bottom" id="jCJ-OS-w4W"/>
                 <constraint firstItem="Cm9-15-Ihk" firstAttribute="leading" secondItem="keY-Qz-Gep" secondAttribute="trailing" constant="4" id="jit-7k-sEQ"/>
                 <constraint firstItem="Cm9-15-Ihk" firstAttribute="centerY" secondItem="c22-O7-iKe" secondAttribute="centerY" id="lUV-fh-EJf"/>
-                <constraint firstItem="uDd-p0-nkL" firstAttribute="leading" secondItem="c22-O7-iKe" secondAttribute="leading" constant="3" id="tAL-Ar-xCQ"/>
+                <constraint firstItem="uDd-p0-nkL" firstAttribute="leading" secondItem="c22-O7-iKe" secondAttribute="leading" constant="12" id="tAL-Ar-xCQ"/>
                 <constraint firstAttribute="trailing" secondItem="Cm9-15-Ihk" secondAttribute="trailing" constant="20" id="w6T-1J-RQ2"/>
                 <constraint firstItem="XMn-Wg-S40" firstAttribute="centerY" secondItem="c22-O7-iKe" secondAttribute="centerY" id="z7F-3a-4Yx"/>
             </constraints>

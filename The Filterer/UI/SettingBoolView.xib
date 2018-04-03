@@ -20,7 +20,7 @@
                     </buttonCell>
                 </button>
                 <box verticalHuggingPriority="750" boxType="separator" translatesAutoresizingMaskIntoConstraints="NO" id="clg-O4-qr7">
-                    <rect key="frame" x="3" y="-2" width="189" height="5"/>
+                    <rect key="frame" x="12" y="-2" width="178" height="5"/>
                 </box>
             </subviews>
             <constraints>
@@ -28,8 +28,8 @@
                 <constraint firstItem="jkT-Gr-S3e" firstAttribute="top" secondItem="c22-O7-iKe" secondAttribute="top" constant="8" id="P5M-qb-hvn"/>
                 <constraint firstAttribute="bottom" secondItem="clg-O4-qr7" secondAttribute="bottom" id="Rdm-ho-LJJ"/>
                 <constraint firstItem="jkT-Gr-S3e" firstAttribute="leading" secondItem="c22-O7-iKe" secondAttribute="leading" constant="20" id="Tsz-Lv-XOq"/>
-                <constraint firstAttribute="trailing" secondItem="clg-O4-qr7" secondAttribute="trailing" constant="8" id="spG-UT-RHP"/>
-                <constraint firstItem="clg-O4-qr7" firstAttribute="leading" secondItem="c22-O7-iKe" secondAttribute="leading" constant="3" id="u4i-0V-1dX"/>
+                <constraint firstAttribute="trailing" secondItem="clg-O4-qr7" secondAttribute="trailing" constant="10" id="spG-UT-RHP"/>
+                <constraint firstItem="clg-O4-qr7" firstAttribute="leading" secondItem="c22-O7-iKe" secondAttribute="leading" constant="12" id="u4i-0V-1dX"/>
             </constraints>
             <connections>
                 <outlet property="checkButton" destination="jkT-Gr-S3e" id="kVV-v4-DRF"/>

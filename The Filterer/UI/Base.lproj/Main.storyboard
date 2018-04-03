@@ -723,14 +723,19 @@
                                 <subviews>
                                     <popUpButton verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="B3M-Jg-2w8">
                                         <rect key="frame" x="18" y="415" width="165" height="26"/>
-                                        <popUpButtonCell key="cell" type="push" title="Gaussian Blur" bezelStyle="rounded" alignment="left" lineBreakMode="truncatingTail" state="on" borderStyle="borderAndBezel" imageScaling="proportionallyDown" inset="2" selectedItem="Vst-Il-zH0" id="Q2A-T5-6vm">
+                                        <popUpButtonCell key="cell" type="push" title="Gaussian Blur (Apple)" bezelStyle="rounded" alignment="left" lineBreakMode="truncatingTail" state="on" borderStyle="borderAndBezel" imageScaling="proportionallyDown" inset="2" selectedItem="KMj-eK-nq4" id="Q2A-T5-6vm">
                                             <behavior key="behavior" lightByBackground="YES" lightByGray="YES"/>
                                             <font key="font" metaFont="menu"/>
                                             <menu key="menu" id="qFr-2c-Rdk">
                                                 <items>
-                                                    <menuItem title="Gaussian Blur" state="on" id="Vst-Il-zH0">
+                                                    <menuItem title="Gaussian Blur" id="Vst-Il-zH0">
                                                         <connections>
                                                             <action selector="didSelectGaussianBlur:" target="XfG-lQ-9wD" id="OZa-1C-7xl"/>
+                                                        </connections>
+                                                    </menuItem>
+                                                    <menuItem title="Gaussian Blur (Apple)" state="on" id="KMj-eK-nq4">
+                                                        <connections>
+                                                            <action selector="didSelectGaussianBlurApple:" target="XfG-lQ-9wD" id="ZGq-Bo-Iql"/>
                                                         </connections>
                                                     </menuItem>
                                                     <menuItem title="Gaussian Blur Parallel" id="XhO-fY-q1F">
@@ -743,7 +748,7 @@
                                         </popUpButtonCell>
                                     </popUpButton>
                                     <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="hyo-hl-b9k">
-                                        <rect key="frame" x="14" y="13" width="172" height="32"/>
+                                        <rect key="frame" x="14" y="1" width="172" height="32"/>
                                         <buttonCell key="cell" type="push" title="Do Some Debugging" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="YWJ-ho-7wt">
                                             <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                                             <font key="font" metaFont="system"/>
@@ -753,11 +758,39 @@
                                         </connections>
                                     </button>
                                     <customView translatesAutoresizingMaskIntoConstraints="NO" id="FwD-4j-uP3">
-                                        <rect key="frame" x="0.0" y="61" width="200" height="337"/>
+                                        <rect key="frame" x="0.0" y="93" width="200" height="305"/>
+                                        <subviews>
+                                            <box verticalHuggingPriority="750" boxType="separator" translatesAutoresizingMaskIntoConstraints="NO" id="D6L-Dv-NcZ">
+                                                <rect key="frame" x="0.0" y="-2" width="200" height="5"/>
+                                            </box>
+                                        </subviews>
+                                        <constraints>
+                                            <constraint firstAttribute="bottom" secondItem="D6L-Dv-NcZ" secondAttribute="bottom" id="Nzb-Lf-dZ6"/>
+                                            <constraint firstAttribute="trailing" secondItem="D6L-Dv-NcZ" secondAttribute="trailing" id="X6u-nX-4Bc"/>
+                                            <constraint firstItem="D6L-Dv-NcZ" firstAttribute="leading" secondItem="FwD-4j-uP3" secondAttribute="leading" id="ZpD-Us-VbN"/>
+                                        </constraints>
                                     </customView>
                                     <box verticalHuggingPriority="750" boxType="separator" translatesAutoresizingMaskIntoConstraints="NO" id="Mt0-MF-sVf">
                                         <rect key="frame" x="3" y="396" width="197" height="5"/>
                                     </box>
+                                    <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="kQc-mq-dG0">
+                                        <rect key="frame" x="14" y="57" width="172" height="32"/>
+                                        <buttonCell key="cell" type="push" title="Apply Filter" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="HfV-Dh-AX2">
+                                            <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                            <font key="font" metaFont="system"/>
+                                        </buttonCell>
+                                        <connections>
+                                            <action selector="applyFilter:" target="XfG-lQ-9wD" id="Rj4-Kb-TEr"/>
+                                        </connections>
+                                    </button>
+                                    <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="oJX-SM-n4r">
+                                        <rect key="frame" x="18" y="45" width="164" height="17"/>
+                                        <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="center" placeholderString="Duration: 0.0ms" id="a2m-Xn-Tqp">
+                                            <font key="font" metaFont="system"/>
+                                            <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                            <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                        </textFieldCell>
+                                    </textField>
                                     <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="5D2-ms-5kX">
                                         <rect key="frame" x="20" y="447" width="162" height="19"/>
                                         <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Choose a filter:" id="xxi-Je-iT4">
@@ -770,19 +803,25 @@
                                 <constraints>
                                     <constraint firstItem="FwD-4j-uP3" firstAttribute="top" secondItem="Mt0-MF-sVf" secondAttribute="bottom" id="2lZ-bh-Rdr"/>
                                     <constraint firstItem="B3M-Jg-2w8" firstAttribute="top" secondItem="5D2-ms-5kX" secondAttribute="bottom" constant="8" id="4k5-1U-UmA"/>
+                                    <constraint firstAttribute="trailing" secondItem="oJX-SM-n4r" secondAttribute="trailing" constant="20" id="4nP-6I-dBf"/>
                                     <constraint firstItem="B3M-Jg-2w8" firstAttribute="leading" secondItem="wjN-kt-b43" secondAttribute="leading" constant="20" id="4ol-Sd-ZYv"/>
                                     <constraint firstAttribute="trailing" secondItem="hyo-hl-b9k" secondAttribute="trailing" constant="20" id="87J-o7-nmd"/>
+                                    <constraint firstItem="kQc-mq-dG0" firstAttribute="leading" secondItem="wjN-kt-b43" secondAttribute="leading" constant="20" id="8hM-qW-O1d"/>
                                     <constraint firstItem="5D2-ms-5kX" firstAttribute="leading" secondItem="wjN-kt-b43" secondAttribute="leading" constant="22" id="9OO-jI-3am"/>
                                     <constraint firstAttribute="trailing" secondItem="Mt0-MF-sVf" secondAttribute="trailing" id="AZQ-Jf-CYr"/>
+                                    <constraint firstItem="oJX-SM-n4r" firstAttribute="leading" secondItem="wjN-kt-b43" secondAttribute="leading" constant="20" id="FyD-Lz-2RV"/>
                                     <constraint firstItem="hyo-hl-b9k" firstAttribute="leading" secondItem="wjN-kt-b43" secondAttribute="leading" constant="20" id="JJ0-o0-Qhz"/>
                                     <constraint firstItem="Mt0-MF-sVf" firstAttribute="leading" secondItem="wjN-kt-b43" secondAttribute="leading" constant="3" id="TVG-Jp-hhE"/>
                                     <constraint firstAttribute="trailing" secondItem="FwD-4j-uP3" secondAttribute="trailing" id="UK1-iW-xGX"/>
-                                    <constraint firstItem="hyo-hl-b9k" firstAttribute="top" secondItem="FwD-4j-uP3" secondAttribute="bottom" constant="20" id="VDs-WW-xjn"/>
+                                    <constraint firstItem="kQc-mq-dG0" firstAttribute="top" secondItem="FwD-4j-uP3" secondAttribute="bottom" constant="8" id="bhn-1y-3XX"/>
+                                    <constraint firstItem="oJX-SM-n4r" firstAttribute="top" secondItem="kQc-mq-dG0" secondAttribute="bottom" constant="2" id="hQ8-Xv-mG2"/>
                                     <constraint firstItem="FwD-4j-uP3" firstAttribute="top" secondItem="B3M-Jg-2w8" secondAttribute="bottom" constant="20" id="jGK-HW-TA5"/>
-                                    <constraint firstAttribute="bottom" secondItem="hyo-hl-b9k" secondAttribute="bottom" constant="20" id="nYt-fT-obC"/>
+                                    <constraint firstItem="hyo-hl-b9k" firstAttribute="top" secondItem="oJX-SM-n4r" secondAttribute="bottom" constant="16" id="lSj-yA-dWE"/>
+                                    <constraint firstAttribute="bottom" secondItem="hyo-hl-b9k" secondAttribute="bottom" constant="8" id="nYt-fT-obC"/>
                                     <constraint firstItem="FwD-4j-uP3" firstAttribute="leading" secondItem="wjN-kt-b43" secondAttribute="leading" id="sWh-v3-MJJ"/>
                                     <constraint firstItem="5D2-ms-5kX" firstAttribute="top" secondItem="wjN-kt-b43" secondAttribute="top" constant="20" id="sfc-hY-8hM"/>
                                     <constraint firstAttribute="trailing" secondItem="5D2-ms-5kX" secondAttribute="trailing" constant="20" id="xgx-HO-gbT"/>
+                                    <constraint firstAttribute="trailing" secondItem="kQc-mq-dG0" secondAttribute="trailing" constant="20" id="z4m-Lb-vjx"/>
                                     <constraint firstAttribute="trailing" secondItem="B3M-Jg-2w8" secondAttribute="trailing" constant="20" id="z6l-8b-Nsp"/>
                                 </constraints>
                             </customView>
@@ -799,6 +838,7 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="durationLabel" destination="oJX-SM-n4r" id="GjB-SQ-g84"/>
                         <outlet property="mainImageView" destination="ymh-bn-5EJ" id="zVa-2H-EvU"/>
                         <outlet property="settingsView" destination="FwD-4j-uP3" id="ALE-2m-yfn"/>
                     </connections>

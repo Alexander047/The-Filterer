@@ -29,7 +29,7 @@
                     </sliderCell>
                 </slider>
                 <box verticalHuggingPriority="750" boxType="separator" translatesAutoresizingMaskIntoConstraints="NO" id="JJZ-46-d0O">
-                    <rect key="frame" x="3" y="-2" width="189" height="5"/>
+                    <rect key="frame" x="12" y="-2" width="178" height="5"/>
                 </box>
             </subviews>
             <constraints>
@@ -39,9 +39,9 @@
                 <constraint firstItem="6cS-gs-XHN" firstAttribute="top" secondItem="c22-O7-iKe" secondAttribute="top" constant="8" id="lmP-Bd-rOk"/>
                 <constraint firstAttribute="bottom" secondItem="JJZ-46-d0O" secondAttribute="bottom" id="ltW-Pi-AP4"/>
                 <constraint firstItem="6cS-gs-XHN" firstAttribute="leading" secondItem="c22-O7-iKe" secondAttribute="leading" constant="20" id="mSX-7M-0rh"/>
-                <constraint firstAttribute="trailing" secondItem="JJZ-46-d0O" secondAttribute="trailing" constant="8" id="nVq-ip-2px"/>
+                <constraint firstAttribute="trailing" secondItem="JJZ-46-d0O" secondAttribute="trailing" constant="10" id="nVq-ip-2px"/>
                 <constraint firstItem="U7b-k2-mlT" firstAttribute="top" secondItem="6cS-gs-XHN" secondAttribute="bottom" constant="8" id="o88-ep-8P0"/>
-                <constraint firstItem="JJZ-46-d0O" firstAttribute="leading" secondItem="c22-O7-iKe" secondAttribute="leading" constant="3" id="v0i-6P-C5I"/>
+                <constraint firstItem="JJZ-46-d0O" firstAttribute="leading" secondItem="c22-O7-iKe" secondAttribute="leading" constant="12" id="v0i-6P-C5I"/>
             </constraints>
             <connections>
                 <outlet property="sliderView" destination="U7b-k2-mlT" id="QPG-9o-oWc"/>

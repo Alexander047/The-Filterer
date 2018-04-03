@@ -12,12 +12,14 @@ class ViewController: NSViewController {
 
     @IBOutlet weak var mainImageView: NSImageView!
     @IBOutlet weak var settingsView: NSView!
+    @IBOutlet weak var durationLabel: NSTextField!
     
     var filteredImage: NSImage!
     var nonfilteredImage: NSImage!
     var settingsViewArray: Array<NSView?>? = []
     
     let gaussianBlur = GaussianBlurFilter()
+    let gaussianBlurApple = AppleGaussianBlurFilter()
     let gaussianBlurParallel = GaussianBlurParallelFilter()
     
     var currentFilter: Filter? {
@@ -30,7 +32,7 @@ class ViewController: NSViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        currentFilter = gaussianBlur
+        currentFilter = gaussianBlurApple
         
         initGUI()
     }
@@ -44,6 +46,7 @@ class ViewController: NSViewController {
         settingsViewArray?.forEach { view in
             view?.removeFromSuperview()
         }
+        durationLabel.stringValue = ""
         
         settingsViewArray?.removeAll()
         var curControlOrigin: CGFloat = settingsView!.frame.size.height
@@ -80,18 +83,54 @@ class ViewController: NSViewController {
         mainImageView.image = nonfilteredImage
     }
     
+    @IBAction func didSelectGaussianBlurApple(_ sender: Any) {
+        currentFilter = gaussianBlurApple
+        mainImageView.image = nonfilteredImage
+    }
+    
     @IBAction func didSelectGaussianBlurParallel(_ sender: Any) {
         currentFilter = gaussianBlurParallel
         mainImageView.image = nonfilteredImage
     }
     
+    @IBAction func applyFilter(_ sender: NSButton) {
+        if nonfilteredImage == nil {
+            return
+        }
+        
+        var settings: Array<Any?>? = []
+        settingsViewArray?.forEach({ view in
+            switch view! {
+            case is SettingBoolView:
+                settings?.append((view as! SettingBoolView).checkButton.integerValue)
+            case is SettingIntegerView:
+                settings?.append((view as! SettingIntegerView).stepperView.integerValue)
+            case is SettingDoubleView:
+                settings?.append((view as! SettingDoubleView).sliderView.doubleValue)
+            default:
+                print("idk :/")
+            }
+        })
+        
+        let startMoment = NSDate()
+        
+        currentFilter?.filterImage(nonfilteredImage!, withSettings: settings!, callback: { newImage in
+            filteredImage = newImage
+            mainImageView.image = newImage
+            
+            let timeValue = String(format: "%.4f", (-startMoment.timeIntervalSinceNow * 1000.0))
+            durationLabel.stringValue = "Duration: \(timeValue)ms"
+            
+            NSLog("\n\nFiltered an image. \n\n\(filteredImage!)\n\n")
+        })
+    }
     
     
     
     
     @IBAction func didDragNewImage(_ sender: NSImageView) {
         nonfilteredImage = sender.image
-        NSLog("Dragged an image. \(nonfilteredImage!)")
+        NSLog("\n\nDragged an image. \n\n\(nonfilteredImage!)\n\n")
     }
     
     @IBAction func didPress(_ sender: NSButton) {

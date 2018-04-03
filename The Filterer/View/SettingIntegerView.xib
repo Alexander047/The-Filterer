@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="13771" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" customObjectInstantitationMethod="direct">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="13771"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <customObject id="-2" userLabel="File's Owner"/>
+        <customObject id="-1" userLabel="First Responder" customClass="FirstResponder"/>
+        <customObject id="-3" userLabel="Application" customClass="NSObject"/>
+        <customView id="c22-O7-iKe" customClass="SettingIntegerView" customModule="The_Filterer" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="200" height="39"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+            <subviews>
+                <stepper horizontalHuggingPriority="750" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="Cm9-15-Ihk">
+                    <rect key="frame" x="164" y="6" width="19" height="27"/>
+                    <stepperCell key="cell" continuous="YES" alignment="left" minValue="1" maxValue="16" doubleValue="1" id="MGk-23-L0M"/>
+                    <connections>
+                        <action selector="stepperValueDidChange:" target="c22-O7-iKe" id="a3h-9Q-QGQ"/>
+                    </connections>
+                </stepper>
+                <textField verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="XMn-Wg-S40">
+                    <rect key="frame" x="18" y="11" width="133" height="17"/>
+                    <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="left" title="Label" id="nfu-cs-ulH">
+                        <font key="font" metaFont="system"/>
+                        <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                        <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                    </textFieldCell>
+                </textField>
+                <box verticalHuggingPriority="750" boxType="separator" translatesAutoresizingMaskIntoConstraints="NO" id="uDd-p0-nkL">
+                    <rect key="frame" x="3" y="-2" width="189" height="5"/>
+                </box>
+                <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="keY-Qz-Gep">
+                    <rect key="frame" x="155" y="11" width="10" height="17"/>
+                    <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="right" title="1" id="JlG-YQ-bXq">
+                        <font key="font" metaFont="system"/>
+                        <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                        <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                    </textFieldCell>
+                </textField>
+            </subviews>
+            <constraints>
+                <constraint firstItem="Cm9-15-Ihk" firstAttribute="centerY" secondItem="c22-O7-iKe" secondAttribute="centerY" id="4ey-6N-0Oh"/>
+                <constraint firstItem="keY-Qz-Gep" firstAttribute="leading" secondItem="XMn-Wg-S40" secondAttribute="trailing" constant="8" id="DDo-Ot-abm"/>
+                <constraint firstAttribute="trailing" secondItem="uDd-p0-nkL" secondAttribute="trailing" constant="8" id="IPq-e3-jmB"/>
+                <constraint firstItem="keY-Qz-Gep" firstAttribute="centerY" secondItem="c22-O7-iKe" secondAttribute="centerY" id="VYr-Ht-EcU"/>
+                <constraint firstItem="XMn-Wg-S40" firstAttribute="leading" secondItem="c22-O7-iKe" secondAttribute="leading" constant="20" id="bbI-97-TNQ"/>
+                <constraint firstItem="Cm9-15-Ihk" firstAttribute="top" secondItem="c22-O7-iKe" secondAttribute="top" constant="8" id="dMa-tZ-BXd"/>
+                <constraint firstAttribute="bottom" secondItem="uDd-p0-nkL" secondAttribute="bottom" id="jCJ-OS-w4W"/>
+                <constraint firstItem="Cm9-15-Ihk" firstAttribute="leading" secondItem="keY-Qz-Gep" secondAttribute="trailing" constant="4" id="jit-7k-sEQ"/>
+                <constraint firstItem="Cm9-15-Ihk" firstAttribute="centerY" secondItem="c22-O7-iKe" secondAttribute="centerY" id="lUV-fh-EJf"/>
+                <constraint firstItem="uDd-p0-nkL" firstAttribute="leading" secondItem="c22-O7-iKe" secondAttribute="leading" constant="3" id="tAL-Ar-xCQ"/>
+                <constraint firstAttribute="trailing" secondItem="Cm9-15-Ihk" secondAttribute="trailing" constant="20" id="w6T-1J-RQ2"/>
+                <constraint firstItem="XMn-Wg-S40" firstAttribute="centerY" secondItem="c22-O7-iKe" secondAttribute="centerY" id="z7F-3a-4Yx"/>
+            </constraints>
+            <connections>
+                <outlet property="stepperView" destination="Cm9-15-Ihk" id="XHf-XC-uDe"/>
+                <outlet property="titleLabel" destination="XMn-Wg-S40" id="ueH-cC-Ag6"/>
+                <outlet property="valueLabel" destination="keY-Qz-Gep" id="M3R-xR-ili"/>
+            </connections>
+            <point key="canvasLocation" x="-1" y="82.5"/>
+        </customView>
+    </objects>
+</document>

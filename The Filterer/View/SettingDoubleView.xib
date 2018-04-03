@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="13771" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" customObjectInstantitationMethod="direct">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="13771"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <customObject id="-2" userLabel="File's Owner"/>
+        <customObject id="-1" userLabel="First Responder" customClass="FirstResponder"/>
+        <customObject id="-3" userLabel="Application" customClass="NSObject"/>
+        <customView id="c22-O7-iKe" customClass="SettingDoubleView" customModule="The_Filterer" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="200" height="57"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+            <subviews>
+                <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="6cS-gs-XHN">
+                    <rect key="frame" x="18" y="32" width="164" height="17"/>
+                    <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Label" id="2Ck-nR-BEr">
+                        <font key="font" metaFont="system"/>
+                        <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                        <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                    </textFieldCell>
+                </textField>
+                <slider verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="U7b-k2-mlT">
+                    <rect key="frame" x="18" y="7" width="164" height="19"/>
+                    <sliderCell key="cell" state="on" alignment="left" maxValue="100" doubleValue="20" tickMarkPosition="above" sliderType="linear" id="FiA-h9-lSy">
+                        <connections>
+                            <action selector="sliderValueDidChange:" target="c22-O7-iKe" id="3Jt-Gc-VCC"/>
+                        </connections>
+                    </sliderCell>
+                </slider>
+                <box verticalHuggingPriority="750" boxType="separator" translatesAutoresizingMaskIntoConstraints="NO" id="JJZ-46-d0O">
+                    <rect key="frame" x="3" y="-2" width="189" height="5"/>
+                </box>
+            </subviews>
+            <constraints>
+                <constraint firstAttribute="trailing" secondItem="6cS-gs-XHN" secondAttribute="trailing" constant="20" id="7ix-yd-jp5"/>
+                <constraint firstAttribute="trailing" secondItem="U7b-k2-mlT" secondAttribute="trailing" constant="20" id="IE6-qp-T9J"/>
+                <constraint firstItem="U7b-k2-mlT" firstAttribute="leading" secondItem="c22-O7-iKe" secondAttribute="leading" constant="20" id="gz4-fq-nAX"/>
+                <constraint firstItem="6cS-gs-XHN" firstAttribute="top" secondItem="c22-O7-iKe" secondAttribute="top" constant="8" id="lmP-Bd-rOk"/>
+                <constraint firstAttribute="bottom" secondItem="JJZ-46-d0O" secondAttribute="bottom" id="ltW-Pi-AP4"/>
+                <constraint firstItem="6cS-gs-XHN" firstAttribute="leading" secondItem="c22-O7-iKe" secondAttribute="leading" constant="20" id="mSX-7M-0rh"/>
+                <constraint firstAttribute="trailing" secondItem="JJZ-46-d0O" secondAttribute="trailing" constant="8" id="nVq-ip-2px"/>
+                <constraint firstItem="U7b-k2-mlT" firstAttribute="top" secondItem="6cS-gs-XHN" secondAttribute="bottom" constant="8" id="o88-ep-8P0"/>
+                <constraint firstItem="JJZ-46-d0O" firstAttribute="leading" secondItem="c22-O7-iKe" secondAttribute="leading" constant="3" id="v0i-6P-C5I"/>
+            </constraints>
+            <connections>
+                <outlet property="sliderView" destination="U7b-k2-mlT" id="QPG-9o-oWc"/>
+                <outlet property="titleLabel" destination="6cS-gs-XHN" id="KFF-nl-BgZ"/>
+            </connections>
+            <point key="canvasLocation" x="-2" y="60.5"/>
+        </customView>
+    </objects>
+</document>

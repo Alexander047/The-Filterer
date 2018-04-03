@@ -1,7 +1,9 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.Cocoa.Storyboard.XIB" version="3.0" toolsVersion="11134" systemVersion="15F34" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" initialViewController="B8D-0N-5wS">
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.Cocoa.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" initialViewController="B8D-0N-5wS">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="11134"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="13771"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+        <capability name="system font weights other than Regular or Bold" minToolsVersion="7.0"/>
     </dependencies>
     <scenes>
         <!--Application-->
@@ -673,7 +675,7 @@
                         <outlet property="delegate" destination="Voe-Tx-rLC" id="PrD-fu-P6m"/>
                     </connections>
                 </application>
-                <customObject id="Voe-Tx-rLC" customClass="AppDelegate" customModuleProvider="target"/>
+                <customObject id="Voe-Tx-rLC" customClass="AppDelegate" customModule="The_Filterer" customModuleProvider="target"/>
                 <customObject id="YLy-65-1bz" customClass="NSFontManager"/>
                 <customObject id="Ady-hI-5gd" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -686,9 +688,10 @@
                     <window key="window" title="Window" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" oneShot="NO" releasedWhenClosed="NO" showsToolbarButton="NO" visibleAtLaunch="NO" animationBehavior="default" id="IQv-IB-iLA">
                         <windowStyleMask key="styleMask" titled="YES" closable="YES" miniaturizable="YES" resizable="YES"/>
                         <windowPositionMask key="initialPositionMask" leftStrut="YES" rightStrut="YES" topStrut="YES" bottomStrut="YES"/>
-                        <rect key="contentRect" x="196" y="240" width="480" height="270"/>
+                        <rect key="contentRect" x="89" y="757" width="480" height="270"/>
                         <rect key="screenRect" x="0.0" y="0.0" width="1680" height="1027"/>
-			<connections>
+                        <value key="minSize" type="size" width="480" height="270"/>
+                        <connections>
                             <outlet property="delegate" destination="B8D-0N-5wS" id="98r-iN-zZc"/>
                         </connections>
                     </window>
@@ -703,15 +706,109 @@
         <!--View Controller-->
         <scene sceneID="hIz-AP-VOD">
             <objects>
-                <viewController id="XfG-lQ-9wD" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="XfG-lQ-9wD" customClass="ViewController" customModule="The_Filterer" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" wantsLayer="YES" id="m2S-Jp-Qdl">
-                        <rect key="frame" x="0.0" y="0.0" width="480" height="270"/>
+                        <rect key="frame" x="0.0" y="0.0" width="849" height="486"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <subviews>
+                            <imageView focusRingType="none" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="ymh-bn-5EJ">
+                                <rect key="frame" x="-3" y="-3" width="655" height="492"/>
+                                <imageCell key="cell" truncatesLastVisibleLine="YES" selectable="YES" editable="YES" refusesFirstResponder="YES" focusRingType="none" alignment="left" animates="YES" imageScaling="proportionallyDown" imageFrameStyle="photo" image="AddPhotoIcon" id="JRR-AA-GVv"/>
+                                <connections>
+                                    <action selector="didDragNewImage:" target="XfG-lQ-9wD" id="TkW-Vh-kaZ"/>
+                                </connections>
+                            </imageView>
+                            <customView translatesAutoresizingMaskIntoConstraints="NO" id="wjN-kt-b43">
+                                <rect key="frame" x="649" y="0.0" width="200" height="486"/>
+                                <subviews>
+                                    <popUpButton verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="B3M-Jg-2w8">
+                                        <rect key="frame" x="18" y="415" width="165" height="26"/>
+                                        <popUpButtonCell key="cell" type="push" title="Gaussian Blur" bezelStyle="rounded" alignment="left" lineBreakMode="truncatingTail" state="on" borderStyle="borderAndBezel" imageScaling="proportionallyDown" inset="2" selectedItem="Vst-Il-zH0" id="Q2A-T5-6vm">
+                                            <behavior key="behavior" lightByBackground="YES" lightByGray="YES"/>
+                                            <font key="font" metaFont="menu"/>
+                                            <menu key="menu" id="qFr-2c-Rdk">
+                                                <items>
+                                                    <menuItem title="Gaussian Blur" state="on" id="Vst-Il-zH0">
+                                                        <connections>
+                                                            <action selector="didSelectGaussianBlur:" target="XfG-lQ-9wD" id="OZa-1C-7xl"/>
+                                                        </connections>
+                                                    </menuItem>
+                                                    <menuItem title="Gaussian Blur Parallel" id="XhO-fY-q1F">
+                                                        <connections>
+                                                            <action selector="didSelectGaussianBlurParallel:" target="XfG-lQ-9wD" id="jn7-Yu-pxi"/>
+                                                        </connections>
+                                                    </menuItem>
+                                                </items>
+                                            </menu>
+                                        </popUpButtonCell>
+                                    </popUpButton>
+                                    <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="hyo-hl-b9k">
+                                        <rect key="frame" x="14" y="13" width="172" height="32"/>
+                                        <buttonCell key="cell" type="push" title="Do Some Debugging" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="YWJ-ho-7wt">
+                                            <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                            <font key="font" metaFont="system"/>
+                                        </buttonCell>
+                                        <connections>
+                                            <action selector="didPress:" target="XfG-lQ-9wD" id="pJB-vY-1Hx"/>
+                                        </connections>
+                                    </button>
+                                    <customView translatesAutoresizingMaskIntoConstraints="NO" id="FwD-4j-uP3">
+                                        <rect key="frame" x="0.0" y="61" width="200" height="337"/>
+                                    </customView>
+                                    <box verticalHuggingPriority="750" boxType="separator" translatesAutoresizingMaskIntoConstraints="NO" id="Mt0-MF-sVf">
+                                        <rect key="frame" x="3" y="396" width="197" height="5"/>
+                                    </box>
+                                    <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="5D2-ms-5kX">
+                                        <rect key="frame" x="20" y="447" width="162" height="19"/>
+                                        <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Choose a filter:" id="xxi-Je-iT4">
+                                            <font key="font" metaFont="systemSemibold" size="15"/>
+                                            <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                            <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                        </textFieldCell>
+                                    </textField>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="FwD-4j-uP3" firstAttribute="top" secondItem="Mt0-MF-sVf" secondAttribute="bottom" id="2lZ-bh-Rdr"/>
+                                    <constraint firstItem="B3M-Jg-2w8" firstAttribute="top" secondItem="5D2-ms-5kX" secondAttribute="bottom" constant="8" id="4k5-1U-UmA"/>
+                                    <constraint firstItem="B3M-Jg-2w8" firstAttribute="leading" secondItem="wjN-kt-b43" secondAttribute="leading" constant="20" id="4ol-Sd-ZYv"/>
+                                    <constraint firstAttribute="trailing" secondItem="hyo-hl-b9k" secondAttribute="trailing" constant="20" id="87J-o7-nmd"/>
+                                    <constraint firstItem="5D2-ms-5kX" firstAttribute="leading" secondItem="wjN-kt-b43" secondAttribute="leading" constant="22" id="9OO-jI-3am"/>
+                                    <constraint firstAttribute="trailing" secondItem="Mt0-MF-sVf" secondAttribute="trailing" id="AZQ-Jf-CYr"/>
+                                    <constraint firstItem="hyo-hl-b9k" firstAttribute="leading" secondItem="wjN-kt-b43" secondAttribute="leading" constant="20" id="JJ0-o0-Qhz"/>
+                                    <constraint firstItem="Mt0-MF-sVf" firstAttribute="leading" secondItem="wjN-kt-b43" secondAttribute="leading" constant="3" id="TVG-Jp-hhE"/>
+                                    <constraint firstAttribute="trailing" secondItem="FwD-4j-uP3" secondAttribute="trailing" id="UK1-iW-xGX"/>
+                                    <constraint firstItem="hyo-hl-b9k" firstAttribute="top" secondItem="FwD-4j-uP3" secondAttribute="bottom" constant="20" id="VDs-WW-xjn"/>
+                                    <constraint firstItem="FwD-4j-uP3" firstAttribute="top" secondItem="B3M-Jg-2w8" secondAttribute="bottom" constant="20" id="jGK-HW-TA5"/>
+                                    <constraint firstAttribute="bottom" secondItem="hyo-hl-b9k" secondAttribute="bottom" constant="20" id="nYt-fT-obC"/>
+                                    <constraint firstItem="FwD-4j-uP3" firstAttribute="leading" secondItem="wjN-kt-b43" secondAttribute="leading" id="sWh-v3-MJJ"/>
+                                    <constraint firstItem="5D2-ms-5kX" firstAttribute="top" secondItem="wjN-kt-b43" secondAttribute="top" constant="20" id="sfc-hY-8hM"/>
+                                    <constraint firstAttribute="trailing" secondItem="5D2-ms-5kX" secondAttribute="trailing" constant="20" id="xgx-HO-gbT"/>
+                                    <constraint firstAttribute="trailing" secondItem="B3M-Jg-2w8" secondAttribute="trailing" constant="20" id="z6l-8b-Nsp"/>
+                                </constraints>
+                            </customView>
+                        </subviews>
+                        <constraints>
+                            <constraint firstItem="wjN-kt-b43" firstAttribute="leading" secondItem="ymh-bn-5EJ" secondAttribute="trailing" id="0x7-m1-8Y9"/>
+                            <constraint firstAttribute="bottom" secondItem="ymh-bn-5EJ" secondAttribute="bottom" id="1fe-Kh-UAt"/>
+                            <constraint firstAttribute="bottom" secondItem="wjN-kt-b43" secondAttribute="bottom" id="4cw-Un-Atv"/>
+                            <constraint firstAttribute="trailing" secondItem="ymh-bn-5EJ" secondAttribute="trailing" constant="200" id="7de-j3-7lX"/>
+                            <constraint firstItem="ymh-bn-5EJ" firstAttribute="top" secondItem="m2S-Jp-Qdl" secondAttribute="top" id="Q7b-nX-Uya"/>
+                            <constraint firstAttribute="trailing" secondItem="wjN-kt-b43" secondAttribute="trailing" id="SLP-eL-kOa"/>
+                            <constraint firstItem="wjN-kt-b43" firstAttribute="top" secondItem="m2S-Jp-Qdl" secondAttribute="top" id="jIq-6h-mX4"/>
+                            <constraint firstItem="ymh-bn-5EJ" firstAttribute="leading" secondItem="m2S-Jp-Qdl" secondAttribute="leading" id="mHu-Ce-xN1"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="mainImageView" destination="ymh-bn-5EJ" id="zVa-2H-EvU"/>
+                        <outlet property="settingsView" destination="FwD-4j-uP3" id="ALE-2m-yfn"/>
+                    </connections>
                 </viewController>
                 <customObject id="rPt-NT-nkU" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="75" y="655"/>
+            <point key="canvasLocation" x="229.5" y="844"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="AddPhotoIcon" width="350" height="305.5"/>
+    </resources>
 </document>

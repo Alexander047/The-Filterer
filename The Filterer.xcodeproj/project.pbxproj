@@ -11,6 +11,15 @@
 		11C456BD207127DE006756DB /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11C456BC207127DE006756DB /* ViewController.swift */; };
 		11C456BF207127DE006756DB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 11C456BE207127DE006756DB /* Assets.xcassets */; };
 		11C456C2207127DE006756DB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 11C456C0207127DE006756DB /* Main.storyboard */; };
+		11C456D220714921006756DB /* Filter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11C456D120714921006756DB /* Filter.swift */; };
+		11C456D420725545006756DB /* GaussianBlurFilter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11C456D320725545006756DB /* GaussianBlurFilter.swift */; };
+		11C456D62072555A006756DB /* GaussianBlurParallelFilter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11C456D52072555A006756DB /* GaussianBlurParallelFilter.swift */; };
+		11C456D9207292D0006756DB /* SettingBoolView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11C456D8207292D0006756DB /* SettingBoolView.swift */; };
+		11C456DB207292ED006756DB /* SettingIntegerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11C456DA207292ED006756DB /* SettingIntegerView.swift */; };
+		11C456DF2072930F006756DB /* SettingDoubleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11C456DE2072930F006756DB /* SettingDoubleView.swift */; };
+		11C456E120729323006756DB /* SettingBoolView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 11C456E020729323006756DB /* SettingBoolView.xib */; };
+		11C456E320729331006756DB /* SettingIntegerView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 11C456E220729331006756DB /* SettingIntegerView.xib */; };
+		11C456E520729360006756DB /* SettingDoubleView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 11C456E420729360006756DB /* SettingDoubleView.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -21,6 +30,15 @@
 		11C456C1207127DE006756DB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		11C456C3207127DE006756DB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		11C456C4207127DE006756DB /* The_Filterer.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = The_Filterer.entitlements; sourceTree = "<group>"; };
+		11C456D120714921006756DB /* Filter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Filter.swift; sourceTree = "<group>"; };
+		11C456D320725545006756DB /* GaussianBlurFilter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GaussianBlurFilter.swift; sourceTree = "<group>"; };
+		11C456D52072555A006756DB /* GaussianBlurParallelFilter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GaussianBlurParallelFilter.swift; sourceTree = "<group>"; };
+		11C456D8207292D0006756DB /* SettingBoolView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingBoolView.swift; sourceTree = "<group>"; };
+		11C456DA207292ED006756DB /* SettingIntegerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingIntegerView.swift; sourceTree = "<group>"; };
+		11C456DE2072930F006756DB /* SettingDoubleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingDoubleView.swift; sourceTree = "<group>"; };
+		11C456E020729323006756DB /* SettingBoolView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SettingBoolView.xib; sourceTree = "<group>"; };
+		11C456E220729331006756DB /* SettingIntegerView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SettingIntegerView.xib; sourceTree = "<group>"; };
+		11C456E420729360006756DB /* SettingDoubleView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SettingDoubleView.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,13 +72,62 @@
 			isa = PBXGroup;
 			children = (
 				11C456BA207127DE006756DB /* AppDelegate.swift */,
-				11C456BC207127DE006756DB /* ViewController.swift */,
+				11C456CC20712CDC006756DB /* UI */,
+				11C456CD20712CFA006756DB /* VC */,
+				11C456D7207292A4006756DB /* View */,
+				11C456CA20712CC4006756DB /* Model */,
+				11C456CB20712CD4006756DB /* Resources */,
+			);
+			path = "The Filterer";
+			sourceTree = "<group>";
+		};
+		11C456CA20712CC4006756DB /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				11C456D120714921006756DB /* Filter.swift */,
+				11C456D320725545006756DB /* GaussianBlurFilter.swift */,
+				11C456D52072555A006756DB /* GaussianBlurParallelFilter.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		11C456CB20712CD4006756DB /* Resources */ = {
+			isa = PBXGroup;
+			children = (
 				11C456BE207127DE006756DB /* Assets.xcassets */,
-				11C456C0207127DE006756DB /* Main.storyboard */,
 				11C456C3207127DE006756DB /* Info.plist */,
 				11C456C4207127DE006756DB /* The_Filterer.entitlements */,
 			);
-			path = "The Filterer";
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		11C456CC20712CDC006756DB /* UI */ = {
+			isa = PBXGroup;
+			children = (
+				11C456C0207127DE006756DB /* Main.storyboard */,
+			);
+			path = UI;
+			sourceTree = "<group>";
+		};
+		11C456CD20712CFA006756DB /* VC */ = {
+			isa = PBXGroup;
+			children = (
+				11C456BC207127DE006756DB /* ViewController.swift */,
+			);
+			path = VC;
+			sourceTree = "<group>";
+		};
+		11C456D7207292A4006756DB /* View */ = {
+			isa = PBXGroup;
+			children = (
+				11C456D8207292D0006756DB /* SettingBoolView.swift */,
+				11C456E020729323006756DB /* SettingBoolView.xib */,
+				11C456DA207292ED006756DB /* SettingIntegerView.swift */,
+				11C456E220729331006756DB /* SettingIntegerView.xib */,
+				11C456DE2072930F006756DB /* SettingDoubleView.swift */,
+				11C456E420729360006756DB /* SettingDoubleView.xib */,
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -123,6 +190,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				11C456BF207127DE006756DB /* Assets.xcassets in Resources */,
+				11C456E120729323006756DB /* SettingBoolView.xib in Resources */,
+				11C456E320729331006756DB /* SettingIntegerView.xib in Resources */,
+				11C456E520729360006756DB /* SettingDoubleView.xib in Resources */,
 				11C456C2207127DE006756DB /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -134,7 +204,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				11C456DB207292ED006756DB /* SettingIntegerView.swift in Sources */,
 				11C456BD207127DE006756DB /* ViewController.swift in Sources */,
+				11C456D420725545006756DB /* GaussianBlurFilter.swift in Sources */,
+				11C456D220714921006756DB /* Filter.swift in Sources */,
+				11C456D9207292D0006756DB /* SettingBoolView.swift in Sources */,
+				11C456D62072555A006756DB /* GaussianBlurParallelFilter.swift in Sources */,
+				11C456DF2072930F006756DB /* SettingDoubleView.swift in Sources */,
 				11C456BB207127DE006756DB /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -263,11 +339,11 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_ENTITLEMENTS = "The Filterer/The_Filterer.entitlements";
+				CODE_SIGN_ENTITLEMENTS = "The Filterer/Resources/The_Filterer.entitlements";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				DEVELOPMENT_TEAM = 896BE262HL;
-				INFOPLIST_FILE = "The Filterer/Info.plist";
+				INFOPLIST_FILE = "The Filterer/Resources/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.SealSoft.The-Filterer";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -279,11 +355,11 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_ENTITLEMENTS = "The Filterer/The_Filterer.entitlements";
+				CODE_SIGN_ENTITLEMENTS = "The Filterer/Resources/The_Filterer.entitlements";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				DEVELOPMENT_TEAM = 896BE262HL;
-				INFOPLIST_FILE = "The Filterer/Info.plist";
+				INFOPLIST_FILE = "The Filterer/Resources/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.SealSoft.The-Filterer";
 				PRODUCT_NAME = "$(TARGET_NAME)";

@@ -29,7 +29,7 @@ class SettingIntegerView: NSView {
         neededView!.titleLabel.stringValue = curSetting.title! + ":"
         neededView!.stepperView.minValue = Double(curSetting.minValue as! Int)
         neededView!.stepperView.maxValue = Double(curSetting.maxValue as! Int)
-        neededView!.stepperView.integerValue = curSetting.minValue as! Int
+        neededView!.stepperView.integerValue = curSetting.defaultValue as! Int
         
         return neededView
     }

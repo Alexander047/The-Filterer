@@ -28,10 +28,10 @@ class SettingDoubleView: NSView {
         }
         
         neededView!.curSetting = curSetting
-        neededView!.titleLabel.stringValue = String(curSetting.title! + ": " + String(curSetting.minValue as! Double))
+        neededView!.titleLabel.stringValue = String(curSetting.title! + ": " + String(Int(curSetting.defaultValue as! Double)))
         neededView!.sliderView.minValue = curSetting.minValue as! Double
         neededView!.sliderView.maxValue = curSetting.maxValue as! Double
-        neededView!.sliderView.integerValue = Int(curSetting.minValue as! Double)
+        neededView!.sliderView.integerValue = Int(curSetting.defaultValue as! Double)
         
         return neededView
     }

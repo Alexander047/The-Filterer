@@ -13,7 +13,7 @@ class GaussianBlurParallelFilter: Filter {
     var curSettings: Array<Any?>?
     
     override func getFilterSettings() -> Array<FilterSetting>? {
-        return [FilterSetting(title: "Интенсивность (%)", minValue: 0.0, maxValue: 20.0), FilterSetting(title: "Кол-во потоков", minValue: 1, maxValue: 12)]
+        return [FilterSetting(title: "Интенсивность (%)", minValue: 0.0, maxValue: 20.0, defaultValue: 10.0), FilterSetting(title: "Кол-во потоков", minValue: 1, maxValue: 12, defaultValue: 4)]
     }
     
     //    override func filterImage(_ image: NSImage, withSettings settings: Array<Any?>, callback: (NSImage?) -> Void) {

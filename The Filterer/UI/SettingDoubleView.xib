@@ -22,7 +22,7 @@
                 </textField>
                 <slider verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="U7b-k2-mlT">
                     <rect key="frame" x="18" y="7" width="164" height="19"/>
-                    <sliderCell key="cell" state="on" alignment="left" maxValue="100" doubleValue="20" tickMarkPosition="above" sliderType="linear" id="FiA-h9-lSy">
+                    <sliderCell key="cell" continuous="YES" state="on" alignment="left" maxValue="100" doubleValue="20" tickMarkPosition="above" sliderType="linear" id="FiA-h9-lSy">
                         <connections>
                             <action selector="sliderValueDidChange:" target="c22-O7-iKe" id="3Jt-Gc-VCC"/>
                         </connections>

@@ -21,6 +21,7 @@ class ViewController: NSViewController {
     let gaussianBlur = GaussianBlurFilter()
     let gaussianBlurApple = AppleGaussianBlurFilter()
     let gaussianBlurParallel = GaussianBlurParallelFilter()
+    let badTrip = BadTrip()
     
     var currentFilter: Filter? {
         didSet {
@@ -52,25 +53,27 @@ class ViewController: NSViewController {
         var curControlOrigin: CGFloat = settingsView!.frame.size.height
         let settingsArray = currentFilter?.getFilterSettings()
         
-        settingsArray!.forEach { curSetting in
-            
-            var curSettingView: NSView?
-            
-            switch curSetting.minValue! {
-            case is Bool:
-                curSettingView = SettingBoolView.initFromNib(curSetting)
-            case is Int:
-                curSettingView = SettingIntegerView.initFromNib(curSetting)
-            case is Double:
-                curSettingView = SettingDoubleView.initFromNib(curSetting)
-            default:
-                print("idk :/")
+        if settingsArray != nil {
+            settingsArray!.forEach { curSetting in
+                
+                var curSettingView: NSView?
+                
+                switch curSetting.minValue! {
+                case is Bool:
+                    curSettingView = SettingBoolView.initFromNib(curSetting)
+                case is Int:
+                    curSettingView = SettingIntegerView.initFromNib(curSetting)
+                case is Double:
+                    curSettingView = SettingDoubleView.initFromNib(curSetting)
+                default:
+                    print("idk :/")
+                }
+                
+                curControlOrigin -= curSettingView!.frame.size.height
+                curSettingView!.setFrameOrigin(NSPoint(x: 0.0, y: curControlOrigin))
+                settingsView.addSubview(curSettingView!)
+                settingsViewArray?.append(curSettingView!)
             }
-            
-            curControlOrigin -= curSettingView!.frame.size.height
-            curSettingView!.setFrameOrigin(NSPoint(x: 0.0, y: curControlOrigin))
-            settingsView.addSubview(curSettingView!)
-            settingsViewArray?.append(curSettingView!)
         }
     }
     
@@ -90,6 +93,11 @@ class ViewController: NSViewController {
     
     @IBAction func didSelectGaussianBlurParallel(_ sender: Any) {
         currentFilter = gaussianBlurParallel
+        mainImageView.image = nonfilteredImage
+    }
+    
+    @IBAction func didSelectBadTripFilter(_ sender: Any) {
+        currentFilter = badTrip
         mainImageView.image = nonfilteredImage
     }
     

@@ -21,6 +21,7 @@
 		11C456E320729331006756DB /* SettingIntegerView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 11C456E220729331006756DB /* SettingIntegerView.xib */; };
 		11C456E520729360006756DB /* SettingDoubleView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 11C456E420729360006756DB /* SettingDoubleView.xib */; };
 		11C456E720740562006756DB /* AppleGaussianBlurFilter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11C456E620740562006756DB /* AppleGaussianBlurFilter.swift */; };
+		11DDD2A5207D49560085FC3F /* BadTrip.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11DDD2A4207D49560085FC3F /* BadTrip.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -41,6 +42,7 @@
 		11C456E220729331006756DB /* SettingIntegerView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SettingIntegerView.xib; sourceTree = "<group>"; };
 		11C456E420729360006756DB /* SettingDoubleView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SettingDoubleView.xib; sourceTree = "<group>"; };
 		11C456E620740562006756DB /* AppleGaussianBlurFilter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppleGaussianBlurFilter.swift; sourceTree = "<group>"; };
+		11DDD2A4207D49560085FC3F /* BadTrip.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BadTrip.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -88,6 +90,7 @@
 			children = (
 				11C456D120714921006756DB /* Filter.swift */,
 				11C456D320725545006756DB /* GaussianBlurFilter.swift */,
+				11DDD2A4207D49560085FC3F /* BadTrip.swift */,
 				11C456E620740562006756DB /* AppleGaussianBlurFilter.swift */,
 				11C456D52072555A006756DB /* GaussianBlurParallelFilter.swift */,
 			);
@@ -215,6 +218,7 @@
 				11C456D9207292D0006756DB /* SettingBoolView.swift in Sources */,
 				11C456D62072555A006756DB /* GaussianBlurParallelFilter.swift in Sources */,
 				11C456DF2072930F006756DB /* SettingDoubleView.swift in Sources */,
+				11DDD2A5207D49560085FC3F /* BadTrip.swift in Sources */,
 				11C456BB207127DE006756DB /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -54,6 +54,33 @@ extension NSImage {
     class func imageFromPixels(_ pixels: [UInt8]?, imageSize size: NSSize) -> NSImage? {
 //        let unsafePixels: UnsafePointer<UInt8> = pixels![0]
         let rgbColorSpace = CGColorSpaceCreateDeviceRGB()
+        let bitmapInfo:CGBitmapInfo = CGBitmapInfo(rawValue: CGImageAlphaInfo.premultipliedLast.rawValue)
+        let bitsPerComponent = 8 //number of bits in UInt8
+        let bitsPerPixel = 4 * bitsPerComponent //ARGB uses 4 components
+        let bytesPerRow = bitsPerPixel * Int(size.width) / 8 // bitsPerRow / 8 (in some cases, you need some paddings)
+        let providerRef = CGDataProvider(
+            data: NSData(bytes: pixels, length: Int(size.height) * bytesPerRow) //Do not put `&` as pixels is already an `UnsafePointer`
+        )
+        
+        let cgim = CGImage(
+            width: Int(size.width),
+            height: Int(size.height),
+            bitsPerComponent: bitsPerComponent,
+            bitsPerPixel: bitsPerPixel,
+            bytesPerRow: bytesPerRow, //->not bits
+            space: rgbColorSpace,
+            bitmapInfo: bitmapInfo,
+            provider: providerRef!,
+            decode: nil,
+            shouldInterpolate: true,
+            intent: CGColorRenderingIntent.defaultIntent
+        )
+        return NSImage(cgImage: cgim!, size: size)
+    }
+    
+    class func imageFromPixelsTrip(_ pixels: [UInt8]?, imageSize size: NSSize) -> NSImage? {
+        //        let unsafePixels: UnsafePointer<UInt8> = pixels![0]
+        let rgbColorSpace = CGColorSpaceCreateDeviceRGB()
         let bitmapInfo:CGBitmapInfo = CGBitmapInfo(rawValue: CGImageAlphaInfo.premultipliedFirst.rawValue)
         let bitsPerComponent = 8 //number of bits in UInt8
         let bitsPerPixel = 4 * bitsPerComponent //ARGB uses 4 components
@@ -72,7 +99,7 @@ extension NSImage {
             bitmapInfo: bitmapInfo,
             provider: providerRef!,
             decode: nil,
-            shouldInterpolate: false,
+            shouldInterpolate: true,
             intent: CGColorRenderingIntent.defaultIntent
         )
         return NSImage(cgImage: cgim!, size: size)

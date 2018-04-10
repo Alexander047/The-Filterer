@@ -26,7 +26,7 @@ class GaussianBlurFilter: Filter {
     
     override func filterImage(_ image: NSImage, withSettings settings: Array<Any?>, callback: (NSImage?) -> Void) {
         
-        radius = Int((Double(image.size.width) * ((settings[0] as! Double) / 100.0)) / 2.0)
+        radius = Int(settings[0] as! Double)
         currentImage = image
         kernel = calculateKernel()!
         pixelData = pixelData(image)

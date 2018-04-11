@@ -5,5 +5,6 @@
 #include <stdio.h>
 #include <stdint.h>
 
-uint8_t * getInput(uint8_t *array, int size, int imageWidth, int imageHeight, int radius);
+uint8_t * runGaussianBlurFilter(uint8_t *array, int size, int imageWidth, int imageHeight, int radius);
+void runGaussianBlurParallelFilter(uint8_t *array, int size, int imageWidth, int imageHeight, int radius);
 

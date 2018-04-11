@@ -34,7 +34,7 @@ void initKernel() {
     }
 }
 
-uint8_t * getInput(uint8_t *array, int arraySize, int imageWidth, int imageHeight, int rad) {
+uint8_t * runGaussianBlurFilter(uint8_t *array, int arraySize, int imageWidth, int imageHeight, int rad) {
     size = arraySize;
     radius = rad;
     imgWidth = imageWidth;
@@ -59,6 +59,31 @@ uint8_t * getInput(uint8_t *array, int arraySize, int imageWidth, int imageHeigh
     }
     
     return &newPixelData[0];
+}
+
+void runGaussianBlurParallelFilter(uint8_t *array, int arraySize, int imageWidth, int imageHeight, int rad) {
+    size = arraySize;
+    radius = rad;
+    imgWidth = imageWidth;
+    imgHeight = imageHeight;
+    pixelData = array;
+    
+    initKernel();
+    
+    uint8_t newPixelData[size];
+    for (int i = 0; i < size; i++) {
+        if ((i + 1) % 4 == 0) {
+            newPixelData[i] = pixelData[i];
+            continue;
+        }
+        float curPixelValue = 0.0;
+        for (int x = -radius; x <= radius; x++) {
+            for (int y = -radius; y <= radius; y++) {
+                curPixelValue += (float)pixelFor(i, x, y) * kernel[x + radius][y + radius];
+            }
+        }
+        newPixelData[i] = (uint8_t)curPixelValue;
+    }
 }
 
 uint8_t pixelFor(int index, int x, int y) {

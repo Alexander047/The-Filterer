@@ -723,7 +723,7 @@
                                 <subviews>
                                     <popUpButton verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="B3M-Jg-2w8">
                                         <rect key="frame" x="18" y="415" width="165" height="26"/>
-                                        <popUpButtonCell key="cell" type="push" title="Gaussian Blur" bezelStyle="rounded" alignment="left" lineBreakMode="truncatingTail" borderStyle="borderAndBezel" imageScaling="proportionallyDown" inset="2" selectedItem="Vst-Il-zH0" id="Q2A-T5-6vm">
+                                        <popUpButtonCell key="cell" type="push" title="Gaussian Blur (Apple)" bezelStyle="rounded" alignment="left" lineBreakMode="truncatingTail" state="on" borderStyle="borderAndBezel" imageScaling="proportionallyDown" inset="2" selectedItem="KMj-eK-nq4" id="Q2A-T5-6vm">
                                             <behavior key="behavior" lightByBackground="YES" lightByGray="YES"/>
                                             <font key="font" metaFont="menu"/>
                                             <menu key="menu" id="qFr-2c-Rdk">

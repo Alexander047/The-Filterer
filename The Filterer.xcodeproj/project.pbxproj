@@ -62,17 +62,10 @@
 		11216613207DF88300730928 /* FilterEngines */ = {
 			isa = PBXGroup;
 			children = (
+				11216615207DF92800730928 /* The Filterer-Bridging-Header.h */,
 				11216616207DF92800730928 /* GaussianBlurEngine.c */,
 			);
 			path = FilterEngines;
-			sourceTree = "<group>";
-		};
-		11216614207DF89500730928 /* EngineBridges */ = {
-			isa = PBXGroup;
-			children = (
-				11216615207DF92800730928 /* The Filterer-Bridging-Header.h */,
-			);
-			path = EngineBridges;
 			sourceTree = "<group>";
 		};
 		11C456AE207127DE006756DB = {
@@ -112,7 +105,6 @@
 				11DDD2A4207D49560085FC3F /* BadTrip.swift */,
 				11C456E620740562006756DB /* AppleGaussianBlurFilter.swift */,
 				11C456D52072555A006756DB /* GaussianBlurParallelFilter.swift */,
-				11216614207DF89500730928 /* EngineBridges */,
 				11216613207DF88300730928 /* FilterEngines */,
 			);
 			path = Model;

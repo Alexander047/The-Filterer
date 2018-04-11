@@ -18,7 +18,7 @@ class GaussianBlurFilter: Filter {
     private var pixelData: [UInt8]?
     
     
-    let settings = [FilterSetting(title: "Radius", minValue: 0.0, maxValue: 20.0, defaultValue: 10.0)]
+    let settings = [FilterSetting(title: "Radius", minValue: 0.0, maxValue: 20.0, defaultValue: 2.0)]
     
     override func getFilterSettings() -> Array<FilterSetting>? {
         return settings

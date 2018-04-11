@@ -40,7 +40,7 @@ class ViewController: NSViewController {
     }
     
     func initGUI() {
-        var output: CInt8 = 0
+        var output: CInt = 0
         getInput(&output)
         
         print(output)

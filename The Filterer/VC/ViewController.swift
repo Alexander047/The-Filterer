@@ -7,6 +7,7 @@
 //
 
 import Cocoa
+import Foundation
 
 class ViewController: NSViewController {
 
@@ -39,7 +40,15 @@ class ViewController: NSViewController {
     }
     
     func initGUI() {
+//        var swiftInput: [UInt8] = [12, 13, 15]
+//        
+//        var uint8Pointer: UnsafeMutablePointer<UInt8>!
+//        uint8Pointer = UnsafeMutablePointer<UInt8>.allocate(capacity: swiftInput.count)
+//        uint8Pointer.initialize(from: &swiftInput, count: swiftInput.count)
+//        
+//        getInput(&uint8Pointer[0], Int32(swiftInput.count))
         
+//        print(output)
     }
     
     func drawFilterControls() {

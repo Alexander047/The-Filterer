@@ -7,6 +7,7 @@
 //
 
 import Cocoa
+import Foundation
 
 class ViewController: NSViewController {
 
@@ -39,7 +40,10 @@ class ViewController: NSViewController {
     }
     
     func initGUI() {
+        var output: CInt8 = 0
+        getInput(&output)
         
+        print(output)
     }
     
     func drawFilterControls() {

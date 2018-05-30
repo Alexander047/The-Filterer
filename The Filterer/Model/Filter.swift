@@ -21,7 +21,7 @@ class Filter: NSObject {
         return [FilterSetting(title: "Generic Title Double", minValue: 0.0, maxValue: 1.0, defaultValue: 0.0), FilterSetting(title: "Generic Title Bool", minValue: false, maxValue: true, defaultValue: false), FilterSetting(title: "Generic Title Integer", minValue: 0, maxValue: 1, defaultValue: 0)]
     }
     
-    func filterImage(_ image: NSImage, withSettings settings:Array<Any?>, callback: (NSImage?) -> Void) {
+    func filterImage(_ image: NSImage, withSettings settings: Array<Any?>, callback: @escaping (NSImage?) -> Void) {
         let newImage = image
         
         callback(newImage)

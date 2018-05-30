@@ -7,7 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1116688520BD8E150007DEF6 /* GaussianBlurParallelEngine.m in Sources */ = {isa = PBXBuildFile; fileRef = 1116688420BD8E150007DEF6 /* GaussianBlurParallelEngine.m */; };
 		11216617207DF92800730928 /* GaussianBlurEngine.c in Sources */ = {isa = PBXBuildFile; fileRef = 11216616207DF92800730928 /* GaussianBlurEngine.c */; };
+		118325C82080B106000F4659 /* GaussianBlurEngine.m in Sources */ = {isa = PBXBuildFile; fileRef = 118325C72080B106000F4659 /* GaussianBlurEngine.m */; };
 		11C456BB207127DE006756DB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11C456BA207127DE006756DB /* AppDelegate.swift */; };
 		11C456BD207127DE006756DB /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11C456BC207127DE006756DB /* ViewController.swift */; };
 		11C456BF207127DE006756DB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 11C456BE207127DE006756DB /* Assets.xcassets */; };
@@ -26,8 +28,12 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		11216615207DF92800730928 /* The Filterer-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "The Filterer-Bridging-Header.h"; sourceTree = "<group>"; };
+		1116688320BD8E150007DEF6 /* GaussianBlurParallelEngine.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GaussianBlurParallelEngine.h; sourceTree = "<group>"; };
+		1116688420BD8E150007DEF6 /* GaussianBlurParallelEngine.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GaussianBlurParallelEngine.m; sourceTree = "<group>"; };
 		11216616207DF92800730928 /* GaussianBlurEngine.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = GaussianBlurEngine.c; sourceTree = "<group>"; };
+		118325C52080B077000F4659 /* TheFilterer-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "TheFilterer-Bridging-Header.h"; sourceTree = "<group>"; };
+		118325C62080B105000F4659 /* GaussianBlurEngine.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GaussianBlurEngine.h; sourceTree = "<group>"; };
+		118325C72080B106000F4659 /* GaussianBlurEngine.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GaussianBlurEngine.m; sourceTree = "<group>"; };
 		11C456B7207127DE006756DB /* The Filterer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "The Filterer.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		11C456BA207127DE006756DB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		11C456BC207127DE006756DB /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -62,8 +68,11 @@
 		11216613207DF88300730928 /* FilterEngines */ = {
 			isa = PBXGroup;
 			children = (
-				11216615207DF92800730928 /* The Filterer-Bridging-Header.h */,
 				11216616207DF92800730928 /* GaussianBlurEngine.c */,
+				118325C62080B105000F4659 /* GaussianBlurEngine.h */,
+				118325C72080B106000F4659 /* GaussianBlurEngine.m */,
+				1116688320BD8E150007DEF6 /* GaussianBlurParallelEngine.h */,
+				1116688420BD8E150007DEF6 /* GaussianBlurParallelEngine.m */,
 			);
 			path = FilterEngines;
 			sourceTree = "<group>";
@@ -71,6 +80,7 @@
 		11C456AE207127DE006756DB = {
 			isa = PBXGroup;
 			children = (
+				118325C52080B077000F4659 /* TheFilterer-Bridging-Header.h */,
 				11C456B9207127DE006756DB /* The Filterer */,
 				11C456B8207127DE006756DB /* Products */,
 			);
@@ -101,10 +111,10 @@
 			isa = PBXGroup;
 			children = (
 				11C456D120714921006756DB /* Filter.swift */,
-				11C456D320725545006756DB /* GaussianBlurFilter.swift */,
 				11DDD2A4207D49560085FC3F /* BadTrip.swift */,
-				11C456E620740562006756DB /* AppleGaussianBlurFilter.swift */,
+				11C456D320725545006756DB /* GaussianBlurFilter.swift */,
 				11C456D52072555A006756DB /* GaussianBlurParallelFilter.swift */,
+				11C456E620740562006756DB /* AppleGaussianBlurFilter.swift */,
 				11216613207DF88300730928 /* FilterEngines */,
 			);
 			path = Model;
@@ -229,11 +239,13 @@
 				11C456BD207127DE006756DB /* ViewController.swift in Sources */,
 				11C456E720740562006756DB /* AppleGaussianBlurFilter.swift in Sources */,
 				11C456D420725545006756DB /* GaussianBlurFilter.swift in Sources */,
+				118325C82080B106000F4659 /* GaussianBlurEngine.m in Sources */,
 				11C456D220714921006756DB /* Filter.swift in Sources */,
 				11C456D9207292D0006756DB /* SettingBoolView.swift in Sources */,
 				11C456D62072555A006756DB /* GaussianBlurParallelFilter.swift in Sources */,
 				11C456DF2072930F006756DB /* SettingDoubleView.swift in Sources */,
 				11DDD2A5207D49560085FC3F /* BadTrip.swift in Sources */,
+				1116688520BD8E150007DEF6 /* GaussianBlurParallelEngine.m in Sources */,
 				11C456BB207127DE006756DB /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -371,7 +383,9 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.SealSoft.The-Filterer";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_OBJC_BRIDGING_HEADER = "The Filterer/Model/FilterEngines/The Filterer-Bridging-Header.h";
+				SWIFT_INSTALL_OBJC_HEADER = YES;
+				SWIFT_OBJC_BRIDGING_HEADER = "TheFilterer-Bridging-Header.h";
+				SWIFT_OBJC_INTERFACE_HEADER_NAME = "";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 4.0;
 			};
@@ -390,7 +404,9 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.SealSoft.The-Filterer";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_OBJC_BRIDGING_HEADER = "The Filterer/Model/FilterEngines/The Filterer-Bridging-Header.h";
+				SWIFT_INSTALL_OBJC_HEADER = YES;
+				SWIFT_OBJC_BRIDGING_HEADER = "TheFilterer-Bridging-Header.h";
+				SWIFT_OBJC_INTERFACE_HEADER_NAME = "";
 				SWIFT_VERSION = 4.0;
 			};
 			name = Release;

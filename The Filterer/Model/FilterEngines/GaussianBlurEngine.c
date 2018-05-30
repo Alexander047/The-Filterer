@@ -70,6 +70,8 @@ void runGaussianBlurParallelFilter(uint8_t *array, int arraySize, int imageWidth
     
     initKernel();
     
+    
+    
     uint8_t newPixelData[size];
     for (int i = 0; i < size; i++) {
         if ((i + 1) % 4 == 0) {

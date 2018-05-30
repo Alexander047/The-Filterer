@@ -34,7 +34,7 @@ class ViewController: NSViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        currentFilter = gaussianBlurApple
+        currentFilter = gaussianBlur
         
         initGUI()
     }
@@ -132,13 +132,13 @@ class ViewController: NSViewController {
         let startMoment = NSDate()
         
         currentFilter?.filterImage(nonfilteredImage!, withSettings: settings!, callback: { newImage in
-            filteredImage = newImage
-            mainImageView.image = newImage
+            self.filteredImage = newImage
+            self.mainImageView.image = newImage
             
             let timeValue = String(format: "%.4f", (-startMoment.timeIntervalSinceNow * 1000.0))
-            durationLabel.stringValue = "Duration: \(timeValue)ms"
+            self.durationLabel.stringValue = "Duration: \(timeValue)ms"
             
-            NSLog("\n\nFiltered an image. \n\n\(filteredImage!)\n\n")
+            NSLog("\n\nFiltered an image. \n\n\(self.filteredImage!)\n\n")
         })
     }
     

@@ -15,7 +15,7 @@ class AppleGaussianBlurFilter: Filter {
         return settings
     }
     
-    override func filterImage(_ image: NSImage, withSettings settings: Array<Any?>, callback: (NSImage?) -> Void) {
+    override func filterImage(_ image: NSImage, withSettings settings: Array<Any?>, callback: @escaping (NSImage?) -> Void) {
         let imageToBlur = CIImage(data: image.tiffRepresentation!)
         let blurfilter = CIFilter(name: "CIGaussianBlur")
         blurfilter?.setValue(imageToBlur, forKey: "inputImage")

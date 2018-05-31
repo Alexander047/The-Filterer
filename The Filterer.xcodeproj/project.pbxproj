@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		1116688520BD8E150007DEF6 /* GaussianBlurParallelEngine.m in Sources */ = {isa = PBXBuildFile; fileRef = 1116688420BD8E150007DEF6 /* GaussianBlurParallelEngine.m */; };
-		11216617207DF92800730928 /* GaussianBlurEngine.c in Sources */ = {isa = PBXBuildFile; fileRef = 11216616207DF92800730928 /* GaussianBlurEngine.c */; };
 		118325C82080B106000F4659 /* GaussianBlurEngine.m in Sources */ = {isa = PBXBuildFile; fileRef = 118325C72080B106000F4659 /* GaussianBlurEngine.m */; };
 		11C456BB207127DE006756DB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11C456BA207127DE006756DB /* AppDelegate.swift */; };
 		11C456BD207127DE006756DB /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11C456BC207127DE006756DB /* ViewController.swift */; };
@@ -30,7 +29,6 @@
 /* Begin PBXFileReference section */
 		1116688320BD8E150007DEF6 /* GaussianBlurParallelEngine.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GaussianBlurParallelEngine.h; sourceTree = "<group>"; };
 		1116688420BD8E150007DEF6 /* GaussianBlurParallelEngine.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GaussianBlurParallelEngine.m; sourceTree = "<group>"; };
-		11216616207DF92800730928 /* GaussianBlurEngine.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = GaussianBlurEngine.c; sourceTree = "<group>"; };
 		118325C52080B077000F4659 /* TheFilterer-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "TheFilterer-Bridging-Header.h"; sourceTree = "<group>"; };
 		118325C62080B105000F4659 /* GaussianBlurEngine.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GaussianBlurEngine.h; sourceTree = "<group>"; };
 		118325C72080B106000F4659 /* GaussianBlurEngine.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GaussianBlurEngine.m; sourceTree = "<group>"; };
@@ -68,7 +66,6 @@
 		11216613207DF88300730928 /* FilterEngines */ = {
 			isa = PBXGroup;
 			children = (
-				11216616207DF92800730928 /* GaussianBlurEngine.c */,
 				118325C62080B105000F4659 /* GaussianBlurEngine.h */,
 				118325C72080B106000F4659 /* GaussianBlurEngine.m */,
 				1116688320BD8E150007DEF6 /* GaussianBlurParallelEngine.h */,
@@ -234,7 +231,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				11216617207DF92800730928 /* GaussianBlurEngine.c in Sources */,
 				11C456DB207292ED006756DB /* SettingIntegerView.swift in Sources */,
 				11C456BD207127DE006756DB /* ViewController.swift in Sources */,
 				11C456E720740562006756DB /* AppleGaussianBlurFilter.swift in Sources */,

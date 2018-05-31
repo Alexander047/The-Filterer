@@ -16,16 +16,20 @@ class AppleGaussianBlurFilter: Filter {
     }
     
     override func filterImage(_ image: NSImage, withSettings settings: Array<Any?>, callback: @escaping (NSImage?) -> Void) {
-        let imageToBlur = CIImage(data: image.tiffRepresentation!)
-        let blurfilter = CIFilter(name: "CIGaussianBlur")
-        blurfilter?.setValue(imageToBlur, forKey: "inputImage")
-        blurfilter?.setValue(NSNumber(value: (settings[0] as! Double)), forKey: "inputRadius")
-        let resultImage = blurfilter?.value(forKey: "outputImage") as! CIImage?
         
-        let rep = NSCIImageRep(ciImage: resultImage!)
-        let newImage = NSImage(size: rep.size)
-        newImage.addRepresentation(rep)
-        
-        callback(newImage)
+        Thread.detachNewThread {
+            let imageToBlur = CIImage(data: image.tiffRepresentation!)
+            let blurfilter = CIFilter(name: "CIGaussianBlur")
+            blurfilter?.setValue(imageToBlur, forKey: "inputImage")
+            blurfilter?.setValue(NSNumber(value: (settings[0] as! Double)), forKey: "inputRadius")
+            let resultImage = blurfilter?.value(forKey: "outputImage") as! CIImage?
+            
+            let rep = NSCIImageRep(ciImage: resultImage!)
+            let newImage = NSImage(size: rep.size)
+            newImage.addRepresentation(rep)
+            DispatchQueue.main.async(execute: {() -> Void in
+                callback(newImage)
+            })
+        }
     }
 }

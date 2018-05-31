@@ -14,6 +14,8 @@ class ViewController: NSViewController {
     @IBOutlet weak var mainImageView: NSImageView!
     @IBOutlet weak var settingsView: NSView!
     @IBOutlet weak var durationLabel: NSTextField!
+    @IBOutlet weak var applyFilterButton: NSButton!
+    @IBOutlet weak var progressIndicator: NSProgressIndicator!
     
     var filteredImage: NSImage!
     var nonfilteredImage: NSImage!
@@ -114,6 +116,10 @@ class ViewController: NSViewController {
         if nonfilteredImage == nil {
             return
         }
+        self.progressIndicator.startAnimation(nil)
+        self.progressIndicator.isHidden = false
+        applyFilterButton.isEnabled = false
+        self.durationLabel.stringValue = ""
         
         var settings: Array<Any?>? = []
         settingsViewArray?.forEach({ view in
@@ -139,6 +145,9 @@ class ViewController: NSViewController {
             self.durationLabel.stringValue = "Duration: \(timeValue)ms"
             
             NSLog("\n\nFiltered an image. \n\n\(self.filteredImage!)\n\n")
+            self.progressIndicator.stopAnimation(nil)
+            self.progressIndicator.isHidden = true
+            self.applyFilterButton.isEnabled = true
         })
     }
     

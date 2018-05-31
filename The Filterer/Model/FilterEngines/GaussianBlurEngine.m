@@ -44,7 +44,7 @@
     
     [NSThread detachNewThreadWithBlock:^{
         [self initKernel];
-        uint8_t newPixelData[size];
+        uint8_t *newPixelData = (uint8_t *)malloc(sizeof(uint8_t) * size);
         for (int i = 0; i < size; i++) {
             if ((i + 1) % 4 == 0) {
                 newPixelData[i] = pixelData[i];

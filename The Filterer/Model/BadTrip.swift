@@ -19,7 +19,7 @@ class BadTrip: Filter {
         return nil
     }
     
-    override func filterImage(_ image: NSImage, withSettings settings: Array<Any?>, callback: (NSImage?) -> Void) {
+    override func filterImage(_ image: NSImage, withSettings settings: Array<Any?>, callback: @escaping (NSImage?) -> Void) {
         
         currentImage = image
         pixelData = pixelData(image)

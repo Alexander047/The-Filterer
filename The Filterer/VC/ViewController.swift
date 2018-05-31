@@ -14,6 +14,8 @@ class ViewController: NSViewController {
     @IBOutlet weak var mainImageView: NSImageView!
     @IBOutlet weak var settingsView: NSView!
     @IBOutlet weak var durationLabel: NSTextField!
+    @IBOutlet weak var applyFilterButton: NSButton!
+    @IBOutlet weak var progressIndicator: NSProgressIndicator!
     
     var filteredImage: NSImage!
     var nonfilteredImage: NSImage!
@@ -34,7 +36,7 @@ class ViewController: NSViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        currentFilter = gaussianBlurApple
+        currentFilter = gaussianBlur
         
         initGUI()
     }
@@ -114,6 +116,10 @@ class ViewController: NSViewController {
         if nonfilteredImage == nil {
             return
         }
+        self.progressIndicator.startAnimation(nil)
+        self.progressIndicator.isHidden = false
+        applyFilterButton.isEnabled = false
+        self.durationLabel.stringValue = ""
         
         var settings: Array<Any?>? = []
         settingsViewArray?.forEach({ view in
@@ -132,13 +138,16 @@ class ViewController: NSViewController {
         let startMoment = NSDate()
         
         currentFilter?.filterImage(nonfilteredImage!, withSettings: settings!, callback: { newImage in
-            filteredImage = newImage
-            mainImageView.image = newImage
+            self.filteredImage = newImage
+            self.mainImageView.image = newImage
             
             let timeValue = String(format: "%.4f", (-startMoment.timeIntervalSinceNow * 1000.0))
-            durationLabel.stringValue = "Duration: \(timeValue)ms"
+            self.durationLabel.stringValue = "Duration: \(timeValue)ms"
             
-            NSLog("\n\nFiltered an image. \n\n\(filteredImage!)\n\n")
+            NSLog("\n\nFiltered an image. \n\n\(self.filteredImage!)\n\n")
+            self.progressIndicator.stopAnimation(nil)
+            self.progressIndicator.isHidden = true
+            self.applyFilterButton.isEnabled = true
         })
     }
     

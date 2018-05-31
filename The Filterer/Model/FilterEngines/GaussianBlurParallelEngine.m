@@ -14,6 +14,7 @@
     int radius;
     int imgWidth;
     int imgHeight;
+    int normalizedDistance;
     uint8_t *pixelData;
     float kernel[41][41];
     uint8_t *newPixelDataRef;
@@ -34,6 +35,9 @@
     imgHeight = imageHeight;
     pixelData = array;
     _successBlock = callback;
+    normalizedDistance = MIN(imgWidth, imgHeight) / 400 + 1;
+    
+    NSLog(@"\n\n\nNormalized Distance: %d\n\n\n", normalizedDistance);
     
     [NSThread detachNewThreadWithBlock:^{
         [self initKernel];
@@ -53,21 +57,7 @@
                     float curPixelValue = 0.0;
                     for (int x = -radius; x <= radius; x++) {
                         for (int y = -radius; y <= radius; y++) {
-                            uint8_t pixelVal;
-                            int width = imgWidth * 4;
-                            int yShift = i + width * y;
-                            if (yShift < 0 || yShift >= size) {
-                                pixelVal = 0;
-                            } else {
-                                int xShift = x * 4;
-                                int xPos = i % width + xShift;
-                                if (xPos < 0 || xPos >= width) {
-                                    pixelVal = 0;
-                                } else {
-                                    pixelVal = pixelData[yShift + xShift];
-                                }
-                            }
-                            curPixelValue += (float)pixelVal * kernel[x + radius][y + radius];
+                            curPixelValue += (float)[self pixelFor:i x:x y:y] * kernel[x + radius][y + radius];
                         }
                     }
                     newPixelDataRef[i] = (uint8_t)curPixelValue;
@@ -118,12 +108,12 @@
 
 - (uint8_t)pixelFor:(int)index x:(int)x y:(int)y {
     int width = imgWidth * 4;
-    int yShift = index + width * y;
+    int yShift = index + width * y * normalizedDistance;
     if (yShift < 0 || yShift >= size) {
         return 0;
     }
     
-    int xShift = x * 4;
+    int xShift = x * 4 * normalizedDistance;
     int xPos = index % width + xShift;
     
     if (xPos < 0 || xPos >= width) {

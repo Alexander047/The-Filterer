@@ -13,6 +13,7 @@
     int radius;
     int imgWidth;
     int imgHeight;
+    int normalizedDistance;
     uint8_t *pixelData;
     float kernel[41][41];
     uint8_t *newPixelDataRef;
@@ -38,7 +39,7 @@
     imgHeight = imageHeight;
     pixelData = array;
     _successBlock = callback;
-    
+    normalizedDistance = MIN(imgWidth, imgHeight) / 400 + 1;
 //    uint8_t newPixelData[size];
 //    newPixelDataRef = &newPixelData[0];
     
@@ -88,12 +89,12 @@
 
 - (uint8_t)pixelFor:(int)index x:(int)x y:(int)y {
     int width = imgWidth * 4;
-    int yShift = index + width * y;
+    int yShift = index + width * y * normalizedDistance;
     if (yShift < 0 || yShift >= size) {
         return 0;
     }
     
-    int xShift = x * 4;
+    int xShift = x * 4 * normalizedDistance;
     int xPos = index % width + xShift;
     
     if (xPos < 0 || xPos >= width) {
